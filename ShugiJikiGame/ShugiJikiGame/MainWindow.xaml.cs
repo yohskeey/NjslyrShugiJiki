@@ -21,9 +21,12 @@ namespace ShugiJikiGame
     /// </summary>
     public partial class MainWindow : MetroWindow
     {
+        private Ikusa _ikusa;
         public MainWindow()
         {
             InitializeComponent();
+
+            this._ikusa = new Ikusa();
         }
     }
 }

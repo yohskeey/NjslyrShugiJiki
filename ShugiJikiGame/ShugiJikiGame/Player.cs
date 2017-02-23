@@ -27,16 +27,31 @@ namespace ShugiJikiGame
         /// </summary>
         public int PositionShugi { get; set; }
         /// <summary>
+        /// シュギ・ジキの間での開始位置
+        /// </summary>
+        public int PositionShugiStart { get; set; }
+        /// <summary>
         /// シュギ・ジキ内部にいるかどうか
         /// </summary>
         public bool IsShugi { get; set; }
         /// <summary>
-        /// アンブッシュされて１回休みフラグ
+        /// アンブッシュされて休む回数
         /// </summary>
-        public bool IsDamage { get; set; }
+        public int damage { get; set; }
         /// <summary>
         /// 死亡フラグ
         /// </summary>
         public bool IsDead { get; set; }
+
+        public Player(bool isNinjaSlayer)
+        {
+            this.IsNjslyr = IsNjslyr;
+            this.LapCount = 1;
+            this.PositionOuter = this.IsNjslyr ? 10 : 0;
+            this.PositionShugi = 0;
+            this.IsShugi = false;
+            this.damage = 0;
+            this.IsDead = false;
+        }
     }
 }

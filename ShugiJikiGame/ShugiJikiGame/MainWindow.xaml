@@ -6,28 +6,238 @@
         xmlns:local="clr-namespace:ShugiJikiGame"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         mc:Ignorable="d"
-        Title="シュギ・ジキと夜の獣" Height="490" Width="735">
+        Title="シュギ・ジキと夜の獣" Height="700" Width="1050">
     <Grid>
+        <Canvas  Margin="139,55,140,54.5" >
+            <Polygon
+            Name="Outer0"
+            Points="75,0, 150,50 75,100 0,50 75,0"
+            Stroke="Purple"
+            StrokeThickness="2" Canvas.Top="229">
+                <Polygon.Fill>
+                    <SolidColorBrush Color="Beige" Opacity="0.4"/>
+                </Polygon.Fill>
+            </Polygon>
+            <Polygon
+            Name="Outer1"
+            Points="50,0, 100,33 50,66 0,33 50,0"
+            Stroke="Purple"
+            StrokeThickness="2" Canvas.Top="198" Canvas.Left="100">
+                <Polygon.Fill>
+                    <SolidColorBrush Color="Beige" Opacity="0.4"/>
+                </Polygon.Fill>
+            </Polygon>
+            <Polygon
+            Name="Outer2"
+            Points="50,0, 100,33 50,66 0,33 50,0"
+            Stroke="Purple"
+            StrokeThickness="2" Canvas.Top="162" Canvas.Left="152">
+                <Polygon.Fill>
+                    <SolidColorBrush Color="Beige" Opacity="0.4"/>
+                </Polygon.Fill>
+            </Polygon>
+            <Polygon
+            Name="Outer3"
+            Points="50,0, 100,33 50,66 0,33 50,0"
+            Stroke="Purple"
+            StrokeThickness="2" Canvas.Top="126" Canvas.Left="205">
+                <Polygon.Fill>
+                    <SolidColorBrush Color="Beige" Opacity="0.4"/>
+                </Polygon.Fill>
+            </Polygon>
+            <Polygon
+            Name="Outer4"
+            Points="50,0, 100,33 50,66 0,33 50,0"
+            Stroke="Purple"
+            StrokeThickness="2" Canvas.Left="260" Canvas.Top="91">
+                <Polygon.Fill>
+                    <SolidColorBrush Color="Beige" Opacity="0.4"/>
+                </Polygon.Fill>
+            </Polygon>
+            <Polygon
+            Name="Outer5"
+            Points="75,0, 150,50 75,100 0,50 75,0"
+            Stroke="Purple"
+            StrokeThickness="2" Canvas.Top="22" Canvas.Left="308">
+                <Polygon.Fill>
+                    <SolidColorBrush Color="Beige" Opacity="0.4"/>
+                </Polygon.Fill>
+            </Polygon>
+            <Polygon
+            Name="Outer6"
+            Points="50,0, 100,33 50,66 0,33 50,0"
+            Stroke="Purple"
+            StrokeThickness="2" Canvas.Top="91" Canvas.Left="410">
+                <Polygon.Fill>
+                    <SolidColorBrush Color="Beige" Opacity="0.4"/>
+                </Polygon.Fill>
+            </Polygon>
+            <Polygon
+            Name="Outer7"
+            Points="50,0, 100,33 50,66 0,33 50,0"
+            Stroke="Purple"
+            StrokeThickness="2" Canvas.Top="126" Canvas.Left="464">
+                <Polygon.Fill>
+                    <SolidColorBrush Color="Beige" Opacity="0.4"/>
+                </Polygon.Fill>
+            </Polygon>
+            <Polygon
+            Name="Outer8"
+            Points="50,0, 100,33 50,66 0,33 50,0"
+            Stroke="Purple"
+            StrokeThickness="2" Canvas.Top="162" Canvas.Left="516">
+                <Polygon.Fill>
+                    <SolidColorBrush Color="Beige" Opacity="0.4"/>
+                </Polygon.Fill>
+            </Polygon>
+            <Polygon
+            Name="Outer9"
+            Points="50,0, 100,33 50,66 0,33 50,0"
+            Stroke="Purple"
+            StrokeThickness="2" Canvas.Left="568" Canvas.Top="198">
+                <Polygon.Fill>
+                    <SolidColorBrush Color="Beige" Opacity="0.4"/>
+                </Polygon.Fill>
+            </Polygon>
+            <Polygon
+            Name="Outer10"
+            Points="75,0, 150,50 75,100 0,50 75,0"
+            Stroke="Purple"
+            StrokeThickness="2" Canvas.Top="229" Canvas.Left="618">
+                <Polygon.Fill>
+                    <SolidColorBrush Color="Beige" Opacity="0.4"/>
+                </Polygon.Fill>
+            </Polygon>
+            <Polygon
+            Name="Outer11"
+            Points="50,0, 100,33 50,66 0,33 50,0"
+            Stroke="Purple"
+            StrokeThickness="2" Canvas.Top="294" Canvas.Left="568">
+                <Polygon.Fill>
+                    <SolidColorBrush Color="Beige" Opacity="0.4"/>
+                </Polygon.Fill>
+            </Polygon>
+            <Polygon
+            Name="Outer12"
+            Points="50,0, 100,33 50,66 0,33 50,0"
+            Stroke="Purple"
+            StrokeThickness="2" Canvas.Top="330" Canvas.Left="516">
+                <Polygon.Fill>
+                    <SolidColorBrush Color="Beige" Opacity="0.4"/>
+                </Polygon.Fill>
+            </Polygon>
+            <Polygon
+            Name="Outer13"
+            Points="50,0, 100,33 50,66 0,33 50,0"
+            Stroke="Purple"
+            StrokeThickness="2" Canvas.Top="366" Canvas.Left="464">
+                <Polygon.Fill>
+                    <SolidColorBrush Color="Beige" Opacity="0.4"/>
+                </Polygon.Fill>
+            </Polygon>
+            <Polygon
+            Name="Outer14"
+            Points="50,0, 100,33 50,66 0,33 50,0"
+            Stroke="Purple"
+            StrokeThickness="2" Canvas.Left="410" Canvas.Top="402">
+                <Polygon.Fill>
+                    <SolidColorBrush Color="Beige" Opacity="0.4"/>
+                </Polygon.Fill>
+            </Polygon>
+            <Polygon
+                Name="Outer15"
+            Points="75,0, 150,50 75,100 0,50 75,0"
+            Stroke="Purple"
+            StrokeThickness="2" Canvas.Top="438" Canvas.Left="308">
+                <Polygon.Fill>
+                    <SolidColorBrush Color="Beige" Opacity="0.4"/>
+                </Polygon.Fill>
+            </Polygon>
+            <Polygon
+            Name="Outer16"
+            Points="50,0, 100,33 50,66 0,33 50,0"
+            Stroke="Purple"
+            StrokeThickness="2" Canvas.Top="402" Canvas.Left="260">
+                <Polygon.Fill>
+                    <SolidColorBrush Color="Beige" Opacity="0.4"/>
+                </Polygon.Fill>
+            </Polygon>
+            <Polygon
+            Name="Outer17"
+            Points="50,0, 100,33 50,66 0,33 50,0"
+            Stroke="Purple"
+            StrokeThickness="2" Canvas.Top="366" Canvas.Left="205">
+                <Polygon.Fill>
+                    <SolidColorBrush Color="Beige" Opacity="0.4"/>
+                </Polygon.Fill>
+            </Polygon>
+            <Polygon
+            Name="Outer18"
+            Points="50,0, 100,33 50,66 0,33 50,0"
+            Stroke="Purple"
+            StrokeThickness="2" Canvas.Top="330" Canvas.Left="152">
+                <Polygon.Fill>
+                    <SolidColorBrush Color="Beige" Opacity="0.4"/>
+                </Polygon.Fill>
+            </Polygon>
+            <Polygon
+            Name="Outer19"
+            Points="50,0, 100,33 50,66 0,33 50,0"
+            Stroke="Purple"
+            StrokeThickness="2" Canvas.Left="100" Canvas.Top="294">
+                <Polygon.Fill>
+                    <SolidColorBrush Color="Beige" Opacity="0.4"/>
+                </Polygon.Fill>
+            </Polygon>
+            <Polygon
+            Name="Outer20"
+            Points="75,0, 150,50 75,100 0,50 75,0"
+            Stroke="Purple"
+            StrokeThickness="2" Canvas.Top="229" Canvas.Left="618">
+                <Polygon.Fill>
+                    <SolidColorBrush Color="Beige" Opacity="0.4"/>
+                </Polygon.Fill>
+            </Polygon>
+        </Canvas>
+        <Canvas  Margin="369,238,270,164.5" >
+            <Polygon
+            Name="Shugi0"
+            Points="75,50, 150,100 75,150 0,100 75,50"
+            Stroke="Purple"
+            StrokeThickness="2">
+                <Polygon.Fill>
+                    <SolidColorBrush Color="Beige" Opacity="0.4"/>
+                </Polygon.Fill>
+            </Polygon>
+            <Polygon
+            Name="Shugi1"
+            Points="150,0, 225,50 150,100 75,50 150,0"
+            Stroke="Purple"
+            StrokeThickness="2">
+                <Polygon.Fill>
+                    <SolidColorBrush Color="Beige" Opacity="0.4"/>
+                </Polygon.Fill>
+            </Polygon>
+            <Polygon
+            Name="Shugi2"
+            Points="225,50, 300,100 225,150 150,100 225,50"
+            Stroke="Purple"
+            StrokeThickness="2">
+                <Polygon.Fill>
+                    <SolidColorBrush Color="Beige" Opacity="0.4"/>
+                </Polygon.Fill>
+            </Polygon>
+            <Polygon
+            Name="Shugi3"
+            Points="150,100, 225,150 150,200 75,150 150,100"
+            Stroke="Purple"
+            StrokeThickness="2">
+                <Polygon.Fill>
+                    <SolidColorBrush Color="Beige" Opacity="0.4"/>
+                </Polygon.Fill>
+            </Polygon>
+        </Canvas>
         <Button x:Name="ButtonStart" Content="start" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="90" Height="37" Style="{StaticResource AccentedSquareButtonStyle}"/>
-        <Canvas HorizontalAlignment="Left" Height="100" Margin="270,68,0,0" VerticalAlignment="Top" Width="150">
-            <Polygon
-    Points="75,0, 150,50 75,100 0,50 75,0"
-    Stroke="Purple"
-    StrokeThickness="2">
-                <Polygon.Fill>
-                    <SolidColorBrush Color="Beige" Opacity="0.4"/>
-                </Polygon.Fill>
-            </Polygon>
-        </Canvas>
-        <Canvas HorizontalAlignment="Left" Height="100" Margin="193,120,0,0" VerticalAlignment="Top" Width="150">
-            <Polygon
-                Points="75,0 150,50 75,100 0,50 75,0"
-                Stroke="Purple"
-                StrokeThickness="2">
-                <Polygon.Fill>
-                    <SolidColorBrush Color="Beige" Opacity="0.4"/>
-                </Polygon.Fill>
-            </Polygon>
-        </Canvas>
+
     </Grid>
 </Controls:MetroWindow>
