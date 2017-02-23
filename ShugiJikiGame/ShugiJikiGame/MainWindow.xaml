@@ -1,0 +1,33 @@
+﻿<Controls:MetroWindow x:Class="ShugiJikiGame.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ShugiJikiGame"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        mc:Ignorable="d"
+        Title="シュギ・ジキと夜の獣" Height="490" Width="735">
+    <Grid>
+        <Button x:Name="ButtonStart" Content="start" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="90" Height="37" Style="{StaticResource AccentedSquareButtonStyle}"/>
+        <Canvas HorizontalAlignment="Left" Height="100" Margin="270,68,0,0" VerticalAlignment="Top" Width="150">
+            <Polygon
+    Points="75,0, 150,50 75,100 0,50 75,0"
+    Stroke="Purple"
+    StrokeThickness="2">
+                <Polygon.Fill>
+                    <SolidColorBrush Color="Beige" Opacity="0.4"/>
+                </Polygon.Fill>
+            </Polygon>
+        </Canvas>
+        <Canvas HorizontalAlignment="Left" Height="100" Margin="193,120,0,0" VerticalAlignment="Top" Width="150">
+            <Polygon
+                Points="75,0 150,50 75,100 0,50 75,0"
+                Stroke="Purple"
+                StrokeThickness="2">
+                <Polygon.Fill>
+                    <SolidColorBrush Color="Beige" Opacity="0.4"/>
+                </Polygon.Fill>
+            </Polygon>
+        </Canvas>
+    </Grid>
+</Controls:MetroWindow>
