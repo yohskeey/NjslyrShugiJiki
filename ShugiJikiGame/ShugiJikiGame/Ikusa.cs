@@ -40,6 +40,7 @@ namespace ShugiJikiGame
                     {
                         // 赤黒に追い付いた
                         NinjaSlayer.damage++;
+                        MyPlayer.AmbushCount++;
                         msg.Add("「イヤーッ！」「グワーッ！」ニンジャスレイヤーにアンブッシュ成功！");
                     }
                     MyPlayer.PositionShugi = next;
@@ -63,12 +64,13 @@ namespace ShugiJikiGame
                     {
                         next = 0;
                         MyPlayer.LapCount++;
-                        msg.Add(MyPlayer.LapCount + "週目突入！");
+                        msg.Add(MyPlayer.LapCount + 1 + "週目突入！");
                     }
                     if (NinjaSlayer.IsShugi == false && next == NinjaSlayer.PositionOuter)
                     {
                         // 赤黒に追い付いた
                         NinjaSlayer.damage++;
+                        MyPlayer.AmbushCount++;
                         msg.Add("「イヤーッ！」「グワーッ！」ニンジャスレイヤーにアンブッシュ成功！");
                     }
                     MyPlayer.PositionOuter = next;
@@ -79,6 +81,7 @@ namespace ShugiJikiGame
                 {
                     MyPlayer.IsShugi = true;
                     MyPlayer.PositionShugiStart = MyPlayer.PositionOuter / 5;
+                    MyPlayer.PositionShugi = MyPlayer.PositionShugiStart;
                     msg.Add("シュギ・ジキに捕らわれた");
                 }
 
@@ -135,14 +138,15 @@ namespace ShugiJikiGame
                         MyPlayer.IsDead = true;
                         msg.Add("「イヤーッ！」「アバーッ！サヨナラ！」あなたは爆発四散！");
                     }
-                    MyPlayer.PositionOuter = next;
+                    NinjaSlayer.PositionOuter = next;
                 }
 
                 // 開始地点ならばシュギ・ジキに入る
-                if (MyPlayer.PositionOuter % 5 == 0)
+                if (NinjaSlayer.PositionOuter % 5 == 0)
                 {
-                    MyPlayer.IsShugi = true;
-                    MyPlayer.PositionShugiStart = MyPlayer.PositionOuter / 5;
+                    NinjaSlayer.IsShugi = true;
+                    NinjaSlayer.PositionShugiStart = NinjaSlayer.PositionOuter / 5;
+                    NinjaSlayer.PositionShugi = NinjaSlayer.PositionShugiStart;
                     msg.Add("「ヌウーッ…行き止まりとは」");
                 }
 

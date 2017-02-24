@@ -19,6 +19,11 @@ namespace ShugiJikiGame
         public int LapCount { get; set; }
 
         /// <summary>
+        /// アンブッシュ成功回数
+        /// </summary>
+        public int AmbushCount { get; set; }
+
+        /// <summary>
         /// 外周の現在値
         /// </summary>
         public int PositionOuter { get; set; }
@@ -45,8 +50,9 @@ namespace ShugiJikiGame
 
         public Player(bool isNinjaSlayer)
         {
-            this.IsNjslyr = IsNjslyr;
-            this.LapCount = 1;
+            this.IsNjslyr = isNinjaSlayer;
+            this.LapCount = 0;
+            this.AmbushCount = 0;
             this.PositionOuter = this.IsNjslyr ? 10 : 0;
             this.PositionShugi = 0;
             this.IsShugi = false;
