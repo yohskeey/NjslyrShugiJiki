@@ -317,6 +317,8 @@
         <Button x:Name="ButtonStart" Content="開始な" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="90" Height="37" Style="{StaticResource AccentedSquareButtonStyle}" Click="ButtonStart_Click"/>
         <TextBlock x:Name="textBlockDice" HorizontalAlignment="Left" Margin="31,55,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Height="102" Width="69" FontFamily="Yu Mincho Demibold" FontSize="72" Foreground="#FFB60606"/>
         <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="147" Margin="702,10,0,0" TextWrapping="Wrap" Text="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=DispMessage}" VerticalAlignment="Top" Width="330"/>
+        <TextBlock x:Name="textBlockLap" HorizontalAlignment="Left" Margin="31,495,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Height="69" Width="1001" FontFamily="Yu Mincho Demibold" FontSize="50" Foreground="#FFB60606"/>
+        <TextBlock x:Name="textBlockAmbush" HorizontalAlignment="Left" Margin="31,552,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Height="102" Width="1001" FontFamily="Yu Mincho Demibold" FontSize="50" Foreground="#FFB60606"/>
 
     </Grid>
 </Controls:MetroWindow>

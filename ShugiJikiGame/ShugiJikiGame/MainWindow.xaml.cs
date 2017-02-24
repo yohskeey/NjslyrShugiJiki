@@ -50,6 +50,9 @@ namespace ShugiJikiGame
                 this.IkusaData = new Ikusa();
                 this.ButtonStart.Content = "賽を振る";
                 this.IsStart = true;
+                this.textBlockDice.Text = "0";
+                this.DispMessage = "<ゲームの開始な>";
+                this.textBox.Text = this.DispMessage;
                 ViewRefreshPosition();
                 return;
             }
@@ -58,6 +61,7 @@ namespace ShugiJikiGame
 
             var move = Ikusa.StartDice();
             this.textBlockDice.Text = move.ToString();
+            DispMessage = "<" + move.ToString() + "マス進むドスエ>\n" + DispMessage;
 
             this.IkusaData.MovePlayer(move).ForEach(v => { DispMessage = v + "\n" + DispMessage;  });
 
@@ -70,6 +74,7 @@ namespace ShugiJikiGame
                 return "";
             });
 
+            DispMessage = "<" + move.ToString() + "ニンジャスレイヤーの行動ドスエ>\n" + DispMessage;
             this.IkusaData.MoveNinjaSlayer().ForEach(v => { DispMessage = v + "\n" + DispMessage; });
 
             this.textBox.Text = this.DispMessage;
@@ -85,7 +90,7 @@ namespace ShugiJikiGame
         {
             if (this.IkusaData.MyPlayer.IsDead)
             {
-                await this.ShowMessageAsync("ゲームオーバーな", "あなたは爆発四散した。\n記録：");
+                await this.ShowMessageAsync("ゲームオーバーな", this.textBlockLap.Text + "\n" + this.textBlockAmbush.Text);
                 this.IsStart = false;
             }
         }
@@ -123,6 +128,9 @@ namespace ShugiJikiGame
             {
                 this.Outers[this.IkusaData.MyPlayer.PositionOuter].Fill = playerSplidColorBrush;
             }
+
+            this.textBlockLap.Text = this.IkusaData.MyPlayer.LapCount + "周";
+            this.textBlockAmbush.Text = this.IkusaData.MyPlayer.AmbushCount + "回アンブッシュ成功";
         }
 
         private void BtnSetting_Click(object sender, RoutedEventArgs e)
