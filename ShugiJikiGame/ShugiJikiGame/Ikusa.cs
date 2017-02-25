@@ -51,6 +51,14 @@ namespace ShugiJikiGame
                 {
                     MyPlayer.IsShugi = false;
                     msg.Add("あなたはシュギ・ジキから離脱した");
+
+                    if (NinjaSlayer.IsShugi == false && MyPlayer.PositionOuter == NinjaSlayer.PositionOuter)
+                    {
+                        // 赤黒に追い付いた
+                        NinjaSlayer.damage += 2;
+                        MyPlayer.AmbushCount++;
+                        msg.Add("「イヤーッ！」「グワーッ！」ニンジャスレイヤーにアンブッシュ成功！");
+                    }
                 }
             }
             else
@@ -83,6 +91,14 @@ namespace ShugiJikiGame
                     MyPlayer.PositionShugiStart = MyPlayer.PositionOuter / 5;
                     MyPlayer.PositionShugi = MyPlayer.PositionShugiStart;
                     msg.Add("あなたはシュギ・ジキの部屋に入った");
+
+                    if (NinjaSlayer.IsShugi && MyPlayer.PositionShugi == NinjaSlayer.PositionShugi)
+                    {
+                        // 赤黒に追い付いた
+                        NinjaSlayer.damage += 2;
+                        MyPlayer.AmbushCount++;
+                        msg.Add("「イヤーッ！」「グワーッ！」ニンジャスレイヤーにアンブッシュ成功！");
+                    }
                 }
 
             }
@@ -122,6 +138,13 @@ namespace ShugiJikiGame
                 {
                     NinjaSlayer.IsShugi = false;
                     msg.Add("ニンジャスレイヤーはシュギ・ジキから離脱した！");
+
+                    if (MyPlayer.IsShugi == false && NinjaSlayer.PositionOuter == MyPlayer.PositionOuter)
+                    {
+                        // プレイヤーに追い付いた
+                        MyPlayer.IsDead = true;
+                        msg.Add("「イヤーッ！」「アバーッ！サヨナラ！」あなたは爆発四散！");
+                    }
                 }
             }
             else
@@ -135,7 +158,6 @@ namespace ShugiJikiGame
                     {
                         // プレイヤーに追い付いた
                         MyPlayer.IsDead = true;
-                        MyPlayer.IsDead = true;
                         msg.Add("「イヤーッ！」「アバーッ！サヨナラ！」あなたは爆発四散！");
                     }
                     NinjaSlayer.PositionOuter = next;
@@ -148,6 +170,13 @@ namespace ShugiJikiGame
                     NinjaSlayer.PositionShugiStart = NinjaSlayer.PositionOuter / 5;
                     NinjaSlayer.PositionShugi = NinjaSlayer.PositionShugiStart;
                     msg.Add("「バカな……行き止まりとは……！」");
+
+                    if (MyPlayer.IsShugi && NinjaSlayer.PositionShugi == MyPlayer.PositionShugi)
+                    {
+                        // プレイヤーに追い付いた
+                        MyPlayer.IsDead = true;
+                        msg.Add("「イヤーッ！」「アバーッ！サヨナラ！」あなたは爆発四散！");
+                    }
                 }
 
             }
