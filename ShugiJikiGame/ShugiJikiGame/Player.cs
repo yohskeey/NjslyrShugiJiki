@@ -42,7 +42,11 @@ namespace ShugiJikiGame
         /// <summary>
         /// アンブッシュされて休む回数
         /// </summary>
-        public int damage { get; set; }
+        public int Damage { get; set; }
+        /// <summary>
+        /// 最大ライフ／最大蓄積ダメージ
+        /// </summary>
+        public int MaxLife { get; set; }
         /// <summary>
         /// 死亡フラグ
         /// </summary>
@@ -56,8 +60,9 @@ namespace ShugiJikiGame
             this.PositionOuter = this.IsNjslyr ? 10 : 0;
             this.PositionShugi = 0;
             this.IsShugi = false;
-            this.damage = 0;
+            this.Damage = 0;
             this.IsDead = false;
+            this.MaxLife = 2;
         }
     }
 }

@@ -26,7 +26,7 @@
                     </Rectangle>
                     <TextBlock Margin="4 0 0 0"
                                VerticalAlignment="Center"
-                               Text="Information" />
+                               Text="Setting" />
                 </StackPanel>
             </Button>
         </Controls:WindowCommands>
@@ -39,6 +39,12 @@
                              Header="Information"
                              Position="Right">
                 <Grid Height="600">
+                    <Grid Height="100" Width="400" Margin="0,0,0,0" VerticalAlignment="Top">
+                        <TextBlock>ニンジャスレイヤーのダメージ  
+                            <RadioButton Name="AmbushEasy" Content="加算" Checked="AmbushEasy_Checked"/>
+                            <RadioButton Name="AmbushHard" Content="最大2" Checked="AmbushHard_Checked"/>
+                        </TextBlock>
+                    </Grid>
                     <TextBlock HorizontalAlignment="Right" Margin="0,0,10,300" VerticalAlignment="Bottom">
                         元ネタ： 
                         <Hyperlink NavigateUri="https://diehardtales.com/n/n29f16b2feae8" 

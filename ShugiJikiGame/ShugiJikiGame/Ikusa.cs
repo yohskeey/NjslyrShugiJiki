@@ -11,10 +11,11 @@ namespace ShugiJikiGame
         public Player MyPlayer { get; set; }
         public Player NinjaSlayer { get; set; }
 
-        public Ikusa()
+        public Ikusa(bool isNSMaxLifeTwo)
         {
             MyPlayer = new Player(false);
             NinjaSlayer = new Player(true);
+            NinjaSlayer.MaxLife = isNSMaxLifeTwo ? 2 : int.MaxValue;
         }
 
         public static int StartDice()
@@ -39,7 +40,7 @@ namespace ShugiJikiGame
                     if (NinjaSlayer.IsShugi && next == NinjaSlayer.PositionShugi)
                     {
                         // 赤黒に追い付いた
-                        NinjaSlayer.damage += 2;
+                        NinjaSlayer.Damage = (NinjaSlayer.Damage + 2 > NinjaSlayer.MaxLife) ? NinjaSlayer.MaxLife : NinjaSlayer.Damage + 2;
                         MyPlayer.AmbushCount++;
                         msg.Add("「イヤーッ！」「グワーッ！」ニンジャスレイヤーにアンブッシュ成功！");
                     }
@@ -55,7 +56,7 @@ namespace ShugiJikiGame
                     if (NinjaSlayer.IsShugi == false && MyPlayer.PositionOuter == NinjaSlayer.PositionOuter)
                     {
                         // 赤黒に追い付いた
-                        NinjaSlayer.damage += 2;
+                        NinjaSlayer.Damage = (NinjaSlayer.Damage + 2 > NinjaSlayer.MaxLife) ? NinjaSlayer.MaxLife : NinjaSlayer.Damage + 2;
                         MyPlayer.AmbushCount++;
                         msg.Add("「イヤーッ！」「グワーッ！」ニンジャスレイヤーにアンブッシュ成功！");
                     }
@@ -77,7 +78,7 @@ namespace ShugiJikiGame
                     if (NinjaSlayer.IsShugi == false && next == NinjaSlayer.PositionOuter)
                     {
                         // 赤黒に追い付いた
-                        NinjaSlayer.damage += 2;
+                        NinjaSlayer.Damage += 2;
                         MyPlayer.AmbushCount++;
                         msg.Add("「イヤーッ！」「グワーッ！」ニンジャスレイヤーにアンブッシュ成功！");
                     }
@@ -95,7 +96,7 @@ namespace ShugiJikiGame
                     if (NinjaSlayer.IsShugi && MyPlayer.PositionShugi == NinjaSlayer.PositionShugi)
                     {
                         // 赤黒に追い付いた
-                        NinjaSlayer.damage += 2;
+                        NinjaSlayer.Damage += 2;
                         MyPlayer.AmbushCount++;
                         msg.Add("「イヤーッ！」「グワーッ！」ニンジャスレイヤーにアンブッシュ成功！");
                     }
@@ -108,10 +109,10 @@ namespace ShugiJikiGame
         public List<string> MoveNinjaSlayer()
         {
             var msg = new List<string>();
-            if (NinjaSlayer.damage > 0)
+            if (NinjaSlayer.Damage > 0)
             {
-                msg.Add("「スゥーッ！ハァーッ！」（" + NinjaSlayer.damage.ToString() + "回休み)");
-                NinjaSlayer.damage--;
+                msg.Add("「スゥーッ！ハァーッ！」（" + NinjaSlayer.Damage.ToString() + "回休み)");
+                NinjaSlayer.Damage--;
                 return msg;
             }
 

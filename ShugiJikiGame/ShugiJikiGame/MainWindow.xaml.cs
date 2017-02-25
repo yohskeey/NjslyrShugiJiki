@@ -40,6 +40,7 @@ namespace ShugiJikiGame
                 Outer10, Outer11, Outer12, Outer13, Outer14, Outer15, Outer16, Outer17, Outer18, Outer19 };
             this.Shugi = new List<Polygon> { Shugi0, Shugi1, Shugi2, Shugi3 };
             this.IsStart = false;
+            this.AmbushEasy.IsChecked = true;
         }
         
 
@@ -47,7 +48,7 @@ namespace ShugiJikiGame
         {
             if (this.IsStart == false)
             {
-                this.IkusaData = new Ikusa();
+                this.IkusaData = new Ikusa(AmbushHard.IsChecked.HasValue ? AmbushHard.IsChecked.Value : false);
                 this.ButtonStart.Content = "賽を振る";
                 this.IsStart = true;
                 this.textBlockDice.Text = "0";
@@ -90,8 +91,19 @@ namespace ShugiJikiGame
         {
             if (this.IkusaData.MyPlayer.IsDead)
             {
-                await this.ShowMessageAsync("ゲームオーバーな", this.textBlockLap.Text + "\n" + this.textBlockAmbush.Text);
+                var settings = new MetroDialogSettings()
+                {
+                    AffirmativeButtonText = "ツイートする",
+                    NegativeButtonText = "ツイートしない"
+                };
+                var res = await this.ShowMessageAsync("ゲームオーバーな", this.textBlockLap.Text + "\n" + this.textBlockAmbush.Text, MessageDialogStyle.AffirmativeAndNegative, settings);
                 this.IsStart = false;
+                if(res == MessageDialogResult.Affirmative)
+                {
+                    System.Diagnostics.Process.Start(
+                        "https://twitter.com/intent/tweet?text=ニンジャスレイヤーから" + this.IkusaData.MyPlayer.LapCount + "周逃げ続け、" +
+                        this.IkusaData.MyPlayer.AmbushCount + "回のアンブッシュを決めたものの哀れ爆発四散してしまった…&hashtags=シュギ・ジキと夜の獣");
+                }
             }
         }
 
@@ -142,6 +154,22 @@ namespace ShugiJikiGame
             // リンククリック
             System.Diagnostics.Process.Start(e.Uri.AbsoluteUri);
             e.Handled = true;
+        }
+
+        private void AmbushEasy_Checked(object sender, RoutedEventArgs e)
+        {
+            if (this.AmbushEasy.IsChecked.HasValue)
+            {
+                this.AmbushHard.IsChecked = !this.AmbushEasy.IsChecked.Value;
+            }
+        }
+
+        private void AmbushHard_Checked(object sender, RoutedEventArgs e)
+        {
+            if (this.AmbushHard.IsChecked.HasValue)
+            {
+                this.AmbushEasy.IsChecked = !this.AmbushHard.IsChecked.Value;
+            }
         }
     }
 }
